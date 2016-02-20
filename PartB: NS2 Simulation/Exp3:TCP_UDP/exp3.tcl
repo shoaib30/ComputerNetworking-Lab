@@ -12,6 +12,7 @@ proc finish {}   {
     $netSimInstance flush-trace
     close $namFile
     close $traceFile
+    exec gawk -f graphDataGenetrator.awk traceOutput.tr &
     exec gawk -f exp3.awk traceOutput.tr &
     exec nam namOutput.nam &
     exit 0
