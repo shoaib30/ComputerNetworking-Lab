@@ -22,12 +22,12 @@ set node4 [$netSimInstance node]
 set node5 [$netSimInstance node]
 set node6 [$netSimInstance node]
 
-$netSimInstance duplex-link $node1 $node0 1Mb 100ms DropTail
-$netSimInstance duplex-link $node2 $node0 1Mb 100ms DropTail
-$netSimInstance duplex-link $node3 $node0 1Mb 100ms DropTail
-$netSimInstance duplex-link $node4 $node0 1Mb 100ms DropTail
+$netSimInstance duplex-link $node1 $node0 1Mb 10ms DropTail
+$netSimInstance duplex-link $node2 $node0 1Mb 10ms DropTail
+$netSimInstance duplex-link $node3 $node0 1Mb 10ms DropTail
+$netSimInstance duplex-link $node4 $node0 1Mb 70ms DropTail
 $netSimInstance duplex-link $node5 $node0 1Mb 100ms DropTail
-$netSimInstance duplex-link $node6 $node0 1Mb 100ms DropTail
+$netSimInstance duplex-link $node6 $node0 1Mb 90ms DropTail
 
 Agent/Ping instproc recv {from rtt} {
         $self instvar node_
@@ -61,11 +61,11 @@ $netSimInstance connect $pingAgent2 $pingAgent5
 $netSimInstance connect $pingAgent3 $pingAgent6
 
 $netSimInstance at 0.1 "$pingAgent1 send"
-$netSimInstance at 0.1 "$pingAgent2 send"
-$netSimInstance at 0.1 "$pingAgent3 send"
-$netSimInstance at 0.2 "$pingAgent4 send"
-$netSimInstance at 0.2 "$pingAgent5 send"
-$netSimInstance at 0.2 "$pingAgent6 send"
+$netSimInstance at 0.3 "$pingAgent2 send"
+$netSimInstance at 0.5 "$pingAgent3 send"
+$netSimInstance at 1.0 "$pingAgent4 send"
+$netSimInstance at 1.2 "$pingAgent5 send"
+$netSimInstance at 1.5 "$pingAgent6 send"
 $netSimInstance at 2.0 "finish"
 
 $netSimInstance run

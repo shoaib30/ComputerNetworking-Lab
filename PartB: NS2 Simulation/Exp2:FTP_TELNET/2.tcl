@@ -17,7 +17,8 @@ close $ntrace
 close $namfile
 
 #Execute the nam animation file
-exec nam ex3.nam &
+#exec nam ex3.nam &
+exec gawk -f 2.awk ex3.tr &
 exit 0
 }
 

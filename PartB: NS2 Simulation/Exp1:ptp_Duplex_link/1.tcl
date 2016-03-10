@@ -11,8 +11,8 @@ proc finish { } {
     exec awk -f 1.awk exp1.tr > awkoutput.tr &
     close $nf
     close $nd
-    exec nam exp1.nam &
-    exec xgraph xgphtrace.tr -geometry 800x400 &
+    #exec nam exp1.nam &
+    #exec xgraph xgphtrace.tr -geometry 800x400 &
     exit 0
 }
 
@@ -23,7 +23,7 @@ set n1 [$ns node]
 set n2 [$ns node]
 
 $ns duplex-link $n0 $n1 1Mb 10ms DropTail
-$ns duplex-link $n1 $n2 256Kb 10ms DropTail
+$ns duplex-link $n1 $n2 900Kb 10ms DropTail
 $ns queue-limit $n1 $n2 10
 
 set udp0 [new Agent/UDP]
