@@ -17,7 +17,7 @@ void BellmanFord(int numNodes, int src) {
     int dist[numNodes];
     for(int i = 0; i < numNodes; i++){
         dist[i] = INT_MAX;
-        nextHop[i] = 0;
+        nextHop[i] = -1;
     }
     dist[src] = 0;
     nextHop[src] = src;
@@ -59,7 +59,7 @@ int main()  {
     cout<<"Enter the graph: \n";
     for(int i = 0; i < numNodes; i++){
         for(int j = 0; j <numNodes; j++){
-            int temp;
+            //int temp;
             cin>>graph[i][j];
 //            if(temp >= 9)
 //                temp = -1;

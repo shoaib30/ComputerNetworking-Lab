@@ -21,7 +21,6 @@ public: Message(char str[])   {
         if(checksum%65536 != 0)
             checksum = (checksum/65536) + (checksum%65536);
         checksum = 65535-checksum;
-
     }
     void printChecksum()    {
         printf("%x",checksum);
@@ -31,7 +30,6 @@ public: Message(char str[])   {
         printChecksum();
         return checksum == 0;
     }
-
 };
 int main() {
     int ch;
@@ -43,16 +41,13 @@ int main() {
     while(k)    {
         cout<<"\n1.Generate Checksum\n2.Detect Error in message\n3.Exit";
         cin>>ch;
-
         switch(ch)  {
             case 1:
-
                 m.calculateChecksum();
                 cout<<"Checksum: ";
                 m.printChecksum();
                 break;
             case 2:
-
                 cout<<"Enter checksum: ";
                 int init;
                 scanf("%x",&init);
