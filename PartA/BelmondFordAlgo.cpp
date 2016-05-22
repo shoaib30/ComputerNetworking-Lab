@@ -33,7 +33,7 @@ void BellmanFord(Graph graph, int src)
     int E = graph.E;
     int dist[V];
     for (int i = 0; i < V; i++)
-        dist[i]   = INT_MAX;
+        dist[i] = INT_MAX;
     dist[src] = 0;
     for (int i = 1; i <= V-1; i++)
     {

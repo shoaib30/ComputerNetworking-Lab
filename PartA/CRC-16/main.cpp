@@ -19,7 +19,7 @@ vector<int> getCodeWord(vector<int> dataWord){
             doXOR(codeWord,i);
         }
     }
-    for(int i=0; i<dataWord.size(); i++)k
+    for(int i=0; i<dataWord.size(); i++)
         codeWord[i] = dataWord[i];
     return codeWord;
 }
