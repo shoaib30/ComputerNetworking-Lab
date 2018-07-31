@@ -24,12 +24,12 @@ set node5 [$netSimInstance node]
 $netSimInstance color 1 red
 $netSimInstance color 2 blue
 
-$node1 color red
+$node1 color blue
 $node1 shape box
-$node5 color red
+$node5 color blue
 $node5 shape box
-$node0 color blue
-$node4 color blue
+$node0 color red
+$node4 color red
 
 $netSimInstance duplex-link $node0 $node2 1Mb 10ms DropTail
 $netSimInstance duplex-link $node1 $node2 1Mb 10ms DropTail
@@ -65,7 +65,7 @@ $netSimInstance connect $UDPAgent $nullSink
 set CBRApplication [new Application/Traffic/CBR]
 $CBRApplication attach-agent $UDPAgent
 $CBRApplication set type_ CBR
-$CBRApplication set packetSize 1000
+$CBRApplication set packetSize_ 1000
 $CBRApplication set rate_ 0.05Mb
 $CBRApplication set random_ false
 

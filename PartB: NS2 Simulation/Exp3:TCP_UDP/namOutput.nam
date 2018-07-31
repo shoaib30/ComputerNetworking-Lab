@@ -13,8 +13,8 @@ n -t * -a 3 -s 3 -S UP -v circle -c orange -i orange
 l -t * -s 0 -d 2 -S UP -r 1000000 -D 0.01 -c black -o right-up
 l -t * -s 1 -d 2 -S UP -r 1000000 -D 0.01 -c black -o right-down
 l -t * -s 2 -d 3 -S UP -r 1000000 -D 0.01 -c black -o right
-q -t * -s 3 -d 2 -a 0.5
-q -t * -s 2 -d 3 -a 0.5
+q -t * -s 3 -d 2 -a 1.0
+q -t * -s 2 -d 3 -a 1.0
 + -t 0.5 -s 0 -d 2 -p tcp -e 40 -c 1 -i 0 -a 1 -x {0.0 3.0 0 ------- null}
 - -t 0.5 -s 0 -d 2 -p tcp -e 40 -c 1 -i 0 -a 1 -x {0.0 3.0 0 ------- null}
 h -t 0.5 -s 0 -d 2 -p tcp -e 40 -c 1 -i 0 -a 1 -x {0.0 3.0 -1 ------- null}

@@ -46,7 +46,7 @@ $netSimInstance duplex-link-op $node2 $node3 orient right
 #set queue size at node2
 $netSimInstance queue-limit $node2 $node3 10
 #set queue monitor at node2
-$netSimInstance duplex-link-op $node2 $node3 queuePos 0.5
+$netSimInstance duplex-link-op $node2 $node3 queuePos 1.0
 
 $node0 label TCP
 $node1 label UDP

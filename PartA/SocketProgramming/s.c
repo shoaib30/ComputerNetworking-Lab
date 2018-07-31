@@ -8,18 +8,18 @@
 #include <netinet/in.h>
 
 int main(int argc, char * argv[])  {
-    int bufsiz=2048;
     struct sockaddr_in address;
     address.sin_family = AF_INET;
     address.sin_port = htons(atoi(argv[1]));
     address.sin_addr.s_addr = INADDR_ANY;
-    char buffer[bufsiz];
     int s = socket(AF_INET,SOCK_STREAM,0);
     bind(s,(struct sockaddr*)&address,sizeof(address));
     listen(s,3);
     int ns = accept(s,(struct sockaddr*)NULL, NULL);
     char filename[256];
     recv(ns,filename,255,0);
+    int bufsiz=2048;
+    char buffer[bufsiz];
     int file = open(filename, O_RDONLY);
     int n = read(file,buffer,bufsiz);
     send(ns,buffer,n,0);

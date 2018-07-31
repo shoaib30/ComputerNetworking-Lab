@@ -22,17 +22,16 @@ set node4 [$netSimInstance node]
 set node5 [$netSimInstance node]
 set node6 [$netSimInstance node]
 
-$netSimInstance duplex-link $node1 $node0 1Mb 10ms DropTail
-$netSimInstance duplex-link $node2 $node0 1Mb 10ms DropTail
-$netSimInstance duplex-link $node3 $node0 1Mb 10ms DropTail
-$netSimInstance duplex-link $node4 $node0 1Mb 70ms DropTail
+$netSimInstance duplex-link $node1 $node0 1Mb 100ms DropTail
+$netSimInstance duplex-link $node2 $node0 1Mb 100ms DropTail
+$netSimInstance duplex-link $node3 $node0 1Mb 100ms DropTail
+$netSimInstance duplex-link $node4 $node0 1Mb 100ms DropTail
 $netSimInstance duplex-link $node5 $node0 1Mb 100ms DropTail
-$netSimInstance duplex-link $node6 $node0 1Mb 90ms DropTail
+$netSimInstance duplex-link $node6 $node0 1Mb 100ms DropTail
 
 Agent/Ping instproc recv {from rtt} {
         $self instvar node_
-        puts "node [$node_ id] received ping answer from \
-              $from with round-trip-time $rtt ms."
+        puts "node [$node_ id] received ping answer from $from with round-trip-time $rtt ms."
 }
 
 set pingAgent1 [new Agent/Ping]

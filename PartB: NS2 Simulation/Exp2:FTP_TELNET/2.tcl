@@ -9,17 +9,17 @@ $ns namtrace-all $namfile
 
 #Finish Procedure
 proc Finish {} {
-global ns ntrace namfile
+    global ns ntrace namfile
 
-#Dump all trace data and close the files
-$ns flush-trace
-close $ntrace
-close $namfile
+    #Dump all trace data and close the files
+    $ns flush-trace
+    close $ntrace
+    close $namfile
 
-#Execute the nam animation file
-#exec nam ex3.nam &
-exec gawk -f 2.awk ex3.tr &
-exit 0
+    #Execute the nam animation file
+    exec nam ex3.nam &
+    exec gawk -f 2.awk ex3.tr &
+    exit 0
 }
 
 $ns color 1 Blue
@@ -39,7 +39,7 @@ $ns simplex-link $n3 $n2 1Mb 10ms DropTail
 
 #Set queue size and Monitor the queue
 $ns queue-limit $n0 $n2 10
-$ns simplex-link-op $n0 $n2 queuePos 0.5
+$ns simplex-link-op $n2 $n3 queuePos 0.5
 
 #Set TCP Connection between n0 and n3
 set tcp0 [new Agent/TCP]
@@ -63,7 +63,7 @@ $ns attach-agent $n3 $sink1
 $ns connect $tcp1 $sink1
 $tcp1 set fid_ 2
 
-#Attach Telnet Application over UDP
+#Attach Telnet Application over TCP
 set telnet [new Application/Telnet]
 $telnet attach-agent $tcp1
 $telnet set type_ Telnet

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-
+#include<stdio.h>
 using namespace std;
 class Message   {
     char* str;
